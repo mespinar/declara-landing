@@ -232,9 +232,11 @@
       .waitlist-form button { width: 100%; }
     }
 
-    /* ===== Kit (ConvertKit) form overrides — mantener estetica Declara ===== */
+    /* ============================================================
+       Kit (ConvertKit) form overrides — estetica Declara + motion
+       ============================================================ */
     .formkit-form[data-uid="267ce23abe"] {
-      max-width: 460px !important;
+      max-width: 480px !important;
       width: 100% !important;
       margin: 0 auto !important;
       padding: 0 !important;
@@ -242,79 +244,204 @@
     }
     .formkit-form[data-uid="267ce23abe"] [data-style="clean"] {
       padding: 0 !important;
+      width: 100% !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-fields {
-      gap: 8px;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 10px !important;
+      margin: 0 !important;
+      align-items: stretch !important;
+    }
+    .formkit-form[data-uid="267ce23abe"] .formkit-field {
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      margin: 0 !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-input {
       background: var(--obsidian-soft) !important;
-      border: 1px solid var(--border) !important;
-      border-radius: 10px !important;
+      border: 1.5px solid var(--border) !important;
+      border-radius: 12px !important;
       color: var(--text) !important;
       font-family: 'Inter', sans-serif !important;
-      font-size: 15px !important;
+      font-size: 16px !important;
       font-weight: 400 !important;
-      padding: 16px 20px !important;
+      padding: 18px 22px !important;
       line-height: 1.4 !important;
-      transition: border-color 0.2s, box-shadow 0.2s !important;
+      width: 100% !important;
+      height: 58px !important;
+      box-sizing: border-box !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease !important;
+    }
+    .formkit-form[data-uid="267ce23abe"] .formkit-input:hover {
+      border-color: var(--text-faint) !important;
+      background: rgba(22, 27, 34, 0.85) !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-input:focus {
       outline: none !important;
       border-color: var(--mint) !important;
-      box-shadow: 0 0 0 3px rgba(94, 229, 161, 0.15) !important;
+      box-shadow: 0 0 0 4px rgba(94, 229, 161, 0.18), 0 0 24px rgba(94, 229, 161, 0.08) !important;
+      background: var(--obsidian-soft) !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-input::placeholder {
       color: var(--text-faint) !important;
       opacity: 1 !important;
     }
+    /* Botón */
     .formkit-form[data-uid="267ce23abe"] .formkit-submit {
       background-color: var(--mint) !important;
       color: var(--obsidian) !important;
       border: none !important;
-      border-radius: 10px !important;
+      border-radius: 12px !important;
       font-family: 'Inter', sans-serif !important;
       font-weight: 700 !important;
-      font-size: 15px !important;
+      font-size: 16px !important;
       letter-spacing: -0.2px !important;
       cursor: pointer !important;
-      transition: background-color 0.2s, transform 0.1s !important;
-      margin-bottom: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 58px !important;
+      min-width: 140px !important;
+      flex: 0 0 auto !important;
+      position: relative !important;
+      overflow: hidden !important;
+      box-shadow: 0 0 0 1px rgba(94, 229, 161, 0.3), 0 8px 28px rgba(94, 229, 161, 0.18) !important;
+      transition: background-color 0.25s ease, transform 0.12s ease, box-shadow 0.25s ease !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-submit > span {
-      padding: 16px 28px !important;
+      padding: 0 28px !important;
       transition: none !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 100% !important;
+      background: transparent !important;
+    }
+    .formkit-form[data-uid="267ce23abe"] .formkit-submit::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 60%) !important;
+      opacity: 0 !important;
+      transition: opacity 0.3s ease !important;
+      pointer-events: none !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-submit:hover {
       background-color: var(--mint-deep) !important;
+      box-shadow: 0 0 0 1px rgba(94, 229, 161, 0.5), 0 12px 36px rgba(94, 229, 161, 0.32) !important;
+      transform: translateY(-1px) !important;
+    }
+    .formkit-form[data-uid="267ce23abe"] .formkit-submit:hover::before {
+      opacity: 1 !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-submit:hover > span {
       background-color: transparent !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-submit:active {
-      transform: scale(0.98) !important;
+      transform: translateY(0) scale(0.98) !important;
+    }
+    /* Spinner (loading state) */
+    .formkit-form[data-uid="267ce23abe"] .formkit-submit[data-active] .formkit-spinner {
+      opacity: 1 !important;
+      width: 28px !important;
+      height: 100% !important;
+    }
+    .formkit-form[data-uid="267ce23abe"] .formkit-spinner > div {
+      background-color: var(--obsidian) !important;
+      opacity: 0.5 !important;
     }
     /* Ocultar "Built with Kit" */
     .formkit-form[data-uid="267ce23abe"] .formkit-powered-by-convertkit-container {
       display: none !important;
     }
-    /* Mensajes de error/success */
+    /* Alertas - Kit las inserta arriba */
     .formkit-form[data-uid="267ce23abe"] .formkit-alert {
       background: var(--obsidian-soft) !important;
-      border-color: var(--border) !important;
+      border: 1px solid var(--border) !important;
       color: var(--text) !important;
-      border-radius: 10px !important;
-      margin-top: 14px !important;
-      font-size: 13px !important;
+      border-radius: 12px !important;
+      margin: 0 0 14px 0 !important;
+      padding: 14px 18px !important;
+      font-size: 14px !important;
+      font-family: 'Inter', sans-serif !important;
+      text-align: center !important;
+      animation: alertIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+    }
+    @keyframes alertIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-alert-success {
-      background: rgba(94, 229, 161, 0.1) !important;
-      border-color: var(--mint) !important;
+      background: rgba(94, 229, 161, 0.08) !important;
+      border-color: rgba(94, 229, 161, 0.4) !important;
       color: var(--mint) !important;
+      font-weight: 500 !important;
     }
     .formkit-form[data-uid="267ce23abe"] .formkit-alert-error {
-      background: rgba(248, 81, 73, 0.1) !important;
-      border-color: #F85149 !important;
+      background: rgba(248, 81, 73, 0.08) !important;
+      border-color: rgba(248, 81, 73, 0.4) !important;
       color: #F85149 !important;
+    }
+    /* Mensaje custom de success (lo inserta nuestro JS) */
+    .declara-success {
+      background: linear-gradient(135deg, rgba(94, 229, 161, 0.12) 0%, rgba(46, 190, 122, 0.08) 100%);
+      border: 1.5px solid rgba(94, 229, 161, 0.45);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: center;
+      animation: successIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+      box-shadow: 0 0 32px rgba(94, 229, 161, 0.15);
+    }
+    @keyframes successIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .declara-success-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 14px;
+      background: var(--mint);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--obsidian);
+      font-size: 26px;
+      font-weight: 900;
+      box-shadow: 0 0 24px rgba(94, 229, 161, 0.4);
+      animation: successPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes successPulse {
+      0%, 100% { box-shadow: 0 0 24px rgba(94, 229, 161, 0.4); }
+      50%      { box-shadow: 0 0 36px rgba(94, 229, 161, 0.7); }
+    }
+    .declara-success-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-strong);
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+    .declara-success-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Mobile tweaks para el form */
+    @media (max-width: 640px) {
+      .formkit-form[data-uid="267ce23abe"] .formkit-fields {
+        flex-direction: column !important;
+      }
+      .formkit-form[data-uid="267ce23abe"] .formkit-submit {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+      .formkit-form[data-uid="267ce23abe"] .formkit-input,
+      .formkit-form[data-uid="267ce23abe"] .formkit-submit {
+        height: 54px !important;
+      }
     }
   </style>
 </head>
@@ -334,21 +461,90 @@
 
       <!-- ===== Kit (ConvertKit) embed - Waitlist Declara.pe ===== -->
       <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-      <form action="https://app.kit.com/forms/9464030/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9464030" data-uid="267ce23abe" data-format="inline" data-version="5">
-        <div data-style="clean">
-          <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-          <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
-            <div class="formkit-field">
-              <input class="formkit-input" name="email_address" aria-label="tu@email.com" placeholder="tu@email.com" required type="email">
+      <div id="declara-waitlist-wrap">
+        <form id="declara-waitlist-form" action="https://app.kit.com/forms/9464030/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9464030" data-uid="267ce23abe" data-format="inline" data-version="5">
+          <div data-style="clean">
+            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+            <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+              <div class="formkit-field">
+                <input class="formkit-input" name="email_address" aria-label="tu@email.com" placeholder="tu@email.com" required type="email" autocomplete="email">
+              </div>
+              <button data-element="submit" class="formkit-submit formkit-submit">
+                <div class="formkit-spinner"><div></div><div></div><div></div></div>
+                <span>Avisame</span>
+              </button>
             </div>
-            <button data-element="submit" class="formkit-submit formkit-submit">
-              <div class="formkit-spinner"><div></div><div></div><div></div></div>
-              <span>Avisame</span>
-            </button>
           </div>
-        </div>
-      </form>
-      <p class="waitlist-note">Te escribimos cuando arrancamos. Cero spam.</p>
+        </form>
+        <p class="waitlist-note" id="declara-waitlist-note">Te escribimos cuando arrancamos. Cero spam.</p>
+      </div>
+
+      <!-- Interceptor: localiza mensajes de Kit a español + reemplaza success -->
+      <script>
+        (function() {
+          var form = document.getElementById('declara-waitlist-form');
+          var wrap = document.getElementById('declara-waitlist-wrap');
+          var note = document.getElementById('declara-waitlist-note');
+          if (!form || !wrap) return;
+
+          // Traducciones de mensajes de Kit
+          var translations = {
+            "Thank you for signing up.": "¡Listo! Te avisamos cuando arrancamos.",
+            "Thank you for subscribing!": "¡Listo! Te avisamos cuando arrancamos.",
+            "Please enter a valid email address.": "Ingresá un email válido.",
+            "This field is required.": "Este campo es obligatorio.",
+            "Something went wrong.": "Algo salió mal. Intentá de nuevo en un minuto.",
+            "Network error. Please try again.": "Error de red. Intentá de nuevo en un minuto."
+          };
+
+          function translateNode(node) {
+            if (node.nodeType === 3) {
+              var t = node.textContent.trim();
+              if (translations[t]) node.textContent = translations[t];
+            } else if (node.nodeType === 1) {
+              node.childNodes.forEach(translateNode);
+            }
+          }
+
+          // Observar cambios en el form (Kit reemplaza contenido al success)
+          var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(m) {
+              m.addedNodes.forEach(function(n) {
+                // Detectar success: Kit pone un mensaje tipo "Thank you for signing up"
+                if (n.nodeType === 1) {
+                  var text = (n.textContent || '').trim();
+                  if (/thank you for (signing up|subscribing)/i.test(text)) {
+                    // Reemplazar TODO el form con nuestro mensaje custom
+                    showSuccess();
+                    observer.disconnect();
+                    return;
+                  }
+                  // Traducir alerts u otros textos
+                  translateNode(n);
+                }
+              });
+            });
+          });
+
+          observer.observe(form, { childList: true, subtree: true });
+
+          function showSuccess() {
+            wrap.innerHTML = '' +
+              '<div class="declara-success" role="status" aria-live="polite">' +
+                '<div class="declara-success-icon">✓</div>' +
+                '<div class="declara-success-title">¡Listo!</div>' +
+                '<div class="declara-success-text">Te avisamos por email cuando arrancamos. Sin spam.</div>' +
+              '</div>';
+            if (note && note.parentNode) note.parentNode.removeChild(note);
+          }
+
+          // Backup: si Kit redirige o algo, también escuchar el submit
+          form.addEventListener('submit', function() {
+            // Después de 1.5s, traducir cualquier mensaje que aparezca
+            setTimeout(function() { translateNode(form); }, 1500);
+          });
+        })();
+      </script>
     </div>
   </main>
 
