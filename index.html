@@ -248,11 +248,27 @@
       <div class="waitlist-eyebrow">Sumate a la waitlist</div>
 
       <!-- ================================================================
-           PLACEHOLDER FORM — Reemplazar este bloque con el embed code
-           de ConvertKit cuando tengas el form creado.
-           Instrucciones detalladas en README.md
+           FORM VISUAL TEMPORAL — funciona como mailto fallback hasta que
+           reemplaces este bloque ENTERO con el embed code REAL de ConvertKit
+           (el que copies desde tu cuenta kit.com, NO un ejemplo).
            ================================================================ -->
-      <script async data-uid="abc123..." src="https://yourname.kit.com/abc123/index.js"></script>
+      <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+        <input type="email" id="wlEmail" placeholder="tu@email.com" required autocomplete="email">
+        <button type="submit">Avisame</button>
+      </form>
+      <p class="waitlist-note" id="wlNote">Te escribimos cuando arrancamos. Cero spam.</p>
+      <script>
+        function handleWaitlist(e) {
+          e.preventDefault();
+          var email = document.getElementById('wlEmail').value;
+          var note = document.getElementById('wlNote');
+          var subject = encodeURIComponent('Waitlist Declara.pe');
+          var body = encodeURIComponent('Hola, sumame a la waitlist.\n\nEmail: ' + email);
+          window.location.href = 'mailto:hola@declara.pe?subject=' + subject + '&body=' + body;
+          note.textContent = 'Se abrio tu cliente de email. Mandanos el correo y te avisamos.';
+          note.style.color = '#5EE5A1';
+        }
+      </script>
       <!-- =============================================================== -->
     </div>
   </main>
