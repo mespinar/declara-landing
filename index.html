@@ -368,6 +368,13 @@
       text-align: center !important;
       animation: alertIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both !important;
     }
+    /* Ocultar alert vacío (solo aparece cuando Kit le mete contenido) */
+    .formkit-form[data-uid="267ce23abe"] .formkit-alert:empty {
+      display: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+    }
     @keyframes alertIn {
       from { opacity: 0; transform: translateY(-8px); }
       to   { opacity: 1; transform: translateY(0); }
